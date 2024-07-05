@@ -5,7 +5,7 @@
 ;
     define('excluirProduto', '../controller/ProdutoController.php?action=excluirProduto&id=');
 
-    echo "<table border='1'>
+    echo "<table class='table table-striped'>
             <tr>
                 <th>ID</th>
                 <th>Categoria</th>
@@ -30,9 +30,13 @@
                         <td>$nome</td>
                         <td>$descricao</td>
                         <td>$valor</td>
-                        <td><a href='editarProduto.php?id=$id'>editar</a></td>
-                        <td><a onclick='return confirm(\"Tem certeza?\")' 
-                        href='".excluirProduto . $id."'>excluir</a></td>
+                        <td class='text-center'><a href='editarProduto.php?id=$id'>
+                        <i class='fa-solid fa-pen-to-square text-success'></i>
+                        </a></td>
+                        <td class='text-center'><a onclick='return confirm(\"Tem certeza?\")' 
+                        href='".excluirProduto . $id."'>
+                        <i class='fa-solid fa-trash text-danger'></i>
+                        </a></td>
                      </tr>";   
             }
         ?>

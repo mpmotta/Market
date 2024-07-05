@@ -8,30 +8,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loja - Produtos</title>
-</head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <style>
+    .mobile {
+        width: 360px;
+    }
+    </style>
 
 <body>
-    <h1>Produtos</h1>
+    <div class="container">
+        <h1>Produtos</h1>
 
-    <form method='post' action="<?=inserirProduto?>">
-        <label>Categoria: </label>
-        <input type="text" placeholder="Categoria" name="txtCategoria" />
-        <br>
-        <label>Nome: </label>
-        <input type="text" placeholder="Nome do Produto" name="txtNome" />
-        <br>
-        <label>Descrição: </label>
-        <textarea cols="20" rows="4" placeholder="Descrição do Produto" name="txtDescricao"></textarea>
-        <br>
-        <label>Valor: </label>
-        <input type="text" placeholder="valor" name="txtValor" />
-        <br>
-        <input type="submit" value="Salvar" />
-        <input type="reset" value="Limpar" />
-    </form>
-    <hr>
+        <form class="mobile" method='post' action="<?=inserirProduto?>">
+            <label class="form-label">Categoria: </label>
+            <input class="form-control" type="text" placeholder="Categoria" name="txtCategoria" />
 
-    <?php
+            <label class="form-label">Nome: </label>
+            <input class="form-control" type="text" placeholder="Nome do Produto" name="txtNome" />
+
+            <label class="form-label">Descrição: </label>
+            <textarea class="form-control" m-label" cols="20" rows="4" placeholder="Descrição do Produto"
+                name="txtDescricao"></textarea>
+
+            <label class="form-label">Valor: </label>
+            <input class="form-control" type="text" placeholder="valor" name="txtValor" />
+
+            <input class="btn btn-danger mt-2" type="submit" value="Limpar" />
+            <input class="btn btn-success mt-2" type="submit" value="Salvar" />
+        </form>
+        <hr>
+
+        <?php
         require_once('consultaProduto.php');
 
         if( isset($_REQUEST["campoVazio"])){
@@ -56,7 +64,7 @@
             echo "<script> alert('Falha! Nao foi possível cadastrar!'); </script>";
         }
     ?>
-
+    </div>
 </body>
 
 </html>
