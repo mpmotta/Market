@@ -8,30 +8,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loja - Clientes</title>
-</head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <style>
+    .mobile {
+        width: 480px;
+    }
+    </style>
 
 <body>
-    <h1>Clientes</h1>
+    <div class="container mobile">
+        <h1>Clientes</h1>
 
-    <form method='post' action="<?=inserirCliente?>">
-        <label>Nome: </label>
-        <input type="text" placeholder="Nome" name="txtNome" />
-        <br>
-        <label>Nascimento: </label>
-        <input type="date" placeholder="nascimento" name="txtNascimento" />
-        <br>
-        <label>Salário: </label>
-        <input type="text" placeholder="salario" name="txtSalario" />
-        <br>
-        <label>Código Cidade: </label>
-        <input type="text" placeholder="cidade" name="txtCidade" />
-        <br>
-        <input type="submit" value="Salvar" />
-        <input type="reset" value="Limpar" />
-    </form>
-    <hr>
+        <form method='post' action="<?=inserirCliente?>">
+            <label class="form-label">Nome: </label>
+            <input class="form-control" type="text" placeholder="Nome" name="txtNome" />
 
-    <?php
+            <label class="form-label">Nascimento: </label>
+            <input class="form-control" type="date" placeholder="nascimento" name="txtNascimento" />
+
+            <label class="form-label">Salário: </label>
+            <input class="form-control" type="text" placeholder="salario" name="txtSalario" />
+
+            <label class="form-label">Código Cidade: </label>
+            <input class="form-control" type="text" placeholder="cidade" name="txtCidade" />
+
+            <input class="btn btn-danger mt-2" type="submit" value="Limpar" />
+            <input class="btn btn-success mt-2" type="submit" value="Salvar" />
+        </form>
+        <hr>
+
+        <?php
         require_once('consultaCliente.php');
 
         if( isset($_REQUEST["campoVazio"])){
@@ -56,7 +63,7 @@
             echo "<script> alert('Falha! Nao foi possível cadastrar!'); </script>";
         }
     ?>
-
+    </div>
 </body>
 
 </html>

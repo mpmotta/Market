@@ -14,19 +14,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Cidade</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    .mobile {
+        width: 360px;
+    }
+    </style>
 </head>
 
 <body>
-    <h1>Editar Cidade</h1>
+    <div class="container mobile">
+        <h1>Editar Cidade</h1>
 
-    <form method='post' action="<?=editarCidade?>">
-        <label>Nome: </label>
-        <input type="text" value="<?=$nome; ?>" name="txtNome" />
-        <input type="hidden" value="<?=$id; ?>" name="id" />
-        <br>
-        <input type="submit" value="Salvar" />
-        <button><a href="cidades.php">Voltar</a></button>
-    </form>
+        <form method='post' action="<?=editarCidade?>">
+            <label class="form-label">Nome: </label>
+            <input class="form-control" type="text" value="<?=$nome; ?>" name="txtNome" />
+            <input type="hidden" value="<?=$id; ?>" name="id" />
+            <br>
+            <input class="btn btn-success" type="submit" value="Salvar" />
+            <a class="btn btn-secondary" href="cidades.php">Voltar</a>
+        </form>
+    </div>
 </body>
 
 </html>

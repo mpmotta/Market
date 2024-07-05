@@ -5,7 +5,7 @@
 ;
     define('excluirCliente', '../controller/clienteController.php?action=excluirCliente&id=');
 
-    echo "<table border='1'>
+    echo "<table class='table table-striped'>
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
@@ -31,9 +31,12 @@
                         <td>$nascimento</td>
                         <td>$salario</td>
                         <td>$cidade</td>
-                        <td><a href='editarCliente.php?id=$id'>editar</a></td>
-                        <td><a onclick='return confirm(\"Tem certeza?\")' 
-                        href='".excluirCliente . $id."'>excluir</a></td>
+                        <td class='text-center'><a href='editarCliente.php?id=$id'>
+                        <i class='fa-solid fa-pen-to-square text-success'></i></a></td>
+                        <td class='text-center'><a onclick='return confirm(\"Tem certeza?\")' 
+                        href='".excluirCliente . $id."'>
+                        <i class='fa-solid fa-trash text-danger'></i>
+                        </a></td>
                      </tr>";   
             }
         ?>

@@ -5,7 +5,7 @@
 ;
     define('excluirCidade', '../controller/cidadeController.php?action=excluirCidade&id=');
 
-        echo "<table border='1'>
+        echo "<table class='table table-striped'>
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
@@ -20,9 +20,12 @@
                 echo"<tr>
                         <td>$id</td>
                         <td>$nome</td>
-                        <td><a href='editarCidade.php?id=$id'>editar</a></td>
-                        <td><a onclick='return confirm(\"Tem certeza?\")' 
-                        href='".excluirCidade . $id."'>excluir</a></td>
+                        <td class='text-center'><a href='editarCidade.php?id=$id'>
+                        <i class='fa-solid fa-pen-to-square text-success'></i></a></td>
+                        <td class='text-center'><a onclick='return confirm(\"Tem certeza?\")' 
+                        href='".excluirCidade . $id."'>
+                        <i class='fa-solid fa-trash text-danger'></i>
+                        </a></td>
                      </tr>";   
             }
         ?>
